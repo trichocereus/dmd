@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "hardhat": "^2.13.0"
   }
 }

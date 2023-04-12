@@ -30,12 +30,25 @@ contract DanceMiladyDance is ERC721, Ownable {
     }
 
     function tokenURI(uint256 tokenId_) public view override returns (string memory) {
-        require(_exists(tokenId_), 'Token does not exist!');
+        require(_exists(tokenId_), 'Token does not exist');
         return string(abi.encodePacked(baseTokenUri, Strings.toString(tokenId_), '.json'));
     }
 
     function withdraw() external onlyOwner {
         (bool success, ) = withdrawWallet.call{ value: address(this).balance }('');
-        require(success, 'withdraw failed');
+        require(success, 'Withdraw failed');
+    }
+
+    function mint(uint256 quantity_) public payable {
+        require(isPublicMintEnabled, 'minting not enabled');
+        require(msg.value == quantity_ * mintPrice, 'wrong mint value');
+        require(totalSupply + quantity_ <= maxSupply, 'sold out');
+        require(walletMints[msg.sender] + quantity_ <= maxPerWallet, 'exceed max wallet');
+
+        for (uint256 i = 0; i < quantity_; i++) {
+            uint256 newTokenId = totalSupply + 1;
+            totalSupply++;
+            _safeMint(msg.sender, newTokenId);
+        }
     }
 }
