@@ -7,7 +7,7 @@ async function main() {
   const lockedAmount = hre.ethers.utils.parseEther("0.001");
 
   const DanceMiladyDance = await hre.ethers.getContractFactory("DanceMiladyDance");
-  const danceMiladyDance = await DanceMiladyDance.deploy(unlockTime, { value: lockedAmount });
+  const danceMiladyDance = await DanceMiladyDance.deploy();
 
   await danceMiladyDance.deployed();
 
