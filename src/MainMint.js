@@ -3,6 +3,7 @@ import { ethers, BigNumber } from 'ethers';
 import DanceMiladyDance from './DanceMiladyDance.json';
 
 const DanceMiladyDanceAddress = '0x1Fa8fA5ADc3cc3c72260Ca7c20e14F33966bB91D';
+
 const MainMint = ({ accounts, SetAccounts }) => {
     const [mintAmount, setMintAmount ] = useState(1);
     const isConnected = Boolean(accounts[0]);
@@ -37,20 +38,29 @@ const MainMint = ({ accounts, SetAccounts }) => {
 
     return (
         <div>
-            <h1 className='title'>Milady Odoriko</h1>
-            <p>The individual has always had to struggle to keep from being overwhelmed by the tribe. If you try it, you will be lonely often, and sometimes frightened. But no price is too high to pay for the privilege of owning yourself. How often have you heard it said that 'you can't do this or that because you're a woman, because you're black, because you're white, because you're old, because you're young, because you're thin, because you're fat, because you're ugly, because you're smart, because you're dumb'? But Milady speaks to you, "you can do anything you put your mind to!"</p>
-            {isConnected ? (
-                <div>
+            <h1 className='title'>miLady ODOriko</h1>
+            <div className='main'>
+                {isConnected ? (
                     <div>
-                        <button onClick={handleDecrement}>-</button>
-                        <input type='number' value={mintAmount} />
-                        <button onClick={handleIncrement}>+</button>
+                        <div>
+                            <button onClick={handleDecrement}>-</button>
+                            <input type='number' value={mintAmount} />
+                            <button onClick={handleIncrement}>+</button>
+                        </div>
+                        <button onClick={handleMint}>Mint</button>
                     </div>
-                    <button onClick={handleMint}>Mint</button>
-                </div>
-            ) : (
-                <p>You must connect your wallet to mint.</p>
-            )}
+                ) : (
+                    <p>You must connect your wallet to mint.</p>
+                )}
+                <p className='lore'>
+                Milady celebrates life in all its chaotic, irrational, and destructive glory. 
+                She is a reminder that the human spirit cannot be contained or controlled, but must be 
+                allowed to express itself freely. In her dance, Milady loses herself 
+                in the ecstasy of the crowd and is transported beyond the confines of her own ego. 
+                Milady represents the dark, irrational forces that lie at the core of human nature, 
+                and it is only through embracing these forces that one can truly live.
+                </p>
+            </div>
         </div>
     );
 };
