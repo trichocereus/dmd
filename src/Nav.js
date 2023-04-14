@@ -17,21 +17,21 @@ const Nav = ({ accounts, setAccounts }) => {
 
     return (
         <Flex justify='space-between' align='center' padding='60px 30px'>
-            <Flex justify='space-around' width='20%' padding='0 60px 0 0'>
+            <Flex justify='space-around' width='20%' padding='0 30px 0 0'>
                 <Link href='https://twitter.com'>
-                    <Image src={Twitter} width='36px' margin='0px' />
+                    <Image src={Twitter} width='42px' margin='0px' />
                 </Link>
             </Flex>
-            <Flex justify='space-around' width='20%' padding='0 60px 0 0'>
+            <Flex justify='space-around' width='20%' padding='0 32vw 0 0'>
                 <Link href='https://etherscan.io'>
-                    <Image src={Etherscan} width='36px' margin='0 15px' />
+                    <Image src={Etherscan} width='42px' margin='0 15px' />
                 </Link>
             </Flex>
             <Spacer />
             <Flex justify='space-around' align='center' width='40%' padding='0 60px 0 0'>
-                <Box margin='0 1.25vw'>About</Box>
+                <Box cursor='pointer' margin='0 1.25vw'>About</Box>
                 <Spacer />
-                <Box margin='0 1.25vw'>Mint</Box>
+                <Box cursor='pointer' margin='0 1.25vw'>Mint</Box>
                 <Spacer />
 
 
@@ -41,10 +41,11 @@ const Nav = ({ accounts, setAccounts }) => {
                     <Button 
                     backgroundColor='#7d3d78' 
                     borderRadius='10px'
+                    fontFamily='inherit'
                     color='white'
                     width='100px'
                     cursor='pointer'
-                    fontSize='20px'
+                    fontSize='30px'
                     padding='15px'
                     margin='0 15px'
                     onClick={connectAccount}

@@ -1,21 +1,19 @@
 @font-face { font-family: Title; src: url('./assets/fonts/title.ttf'); } 
-/* @font-face { font-family: Main; src: url('./assets/fonts/main.ttf'); }  */
+@font-face { font-family: Main; src: url('./assets/fonts/main.ttf'); } 
+@font-face { font-family: Number; src: url('./assets/fonts/number.ttf'); } 
 
 * {
   box-sizing: border-box;
-}
-
-body {
-
 }
 
 .App {
   text-align: center;
   color: #FFFFFF;
   position: relative;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Main, sans-serif;
   font-size: 20px;
   letter-spacing: 1px;
+  font-size: 30px;
 }
 
 .Stars {
@@ -31,22 +29,20 @@ body {
 
 .title {
   font-family: Title, sans-serif;
-  letter-spacing: 12px;
-  font-size: 120px;
+  letter-spacing: 15px;
+  font-size: 110px;
   margin: 4vw 5vw;
   background: -webkit-linear-gradient(#eae0eb, #544652);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.main {
-  margin: 4vw 20vw;
-  overflow: visible;
+.number {
+  font-family: Number, sans-serif;
 }
 
-.lore {
-  padding-top: 30px;
-  font-size: 15px;
+p {
+  padding: 0 20px;
 }
 
 #stars {
